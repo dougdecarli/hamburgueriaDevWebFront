@@ -21,10 +21,11 @@
     display: inline-block;
     width: 45px;
     height: 45px;
-    font-size: 25px;
+    font-size: 29px;
     margin-top: 5px;
     margin-right: 20px;
     border-radius: 50%;
+    cursor: pointer;
   }
 
   .finish-request-container {
@@ -46,4 +47,17 @@
     justify-content: center;
     display: flex;
     align-items: center;
+  }
+
+  .product-name {
+    font-size: 36px
+    ;
+  }
+
+  .description {
+    font-size: 28px;
+  }
+
+  .total-value {
+    font-size: 30px;
   }
