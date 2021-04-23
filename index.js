@@ -1,4 +1,5 @@
-let currentTotalValue = 0;
+      let currentTotalValue = 0;
+      const selectedProducts = [];
       let divProducts = document.getElementById('products');
       let request = new XMLHttpRequest(),
         method = "GET",
@@ -10,8 +11,7 @@ let currentTotalValue = 0;
           console.log(productsResult);
           for (let index = 0; index < productsResult.length; index++) {
             const product = productsResult[index];
-            let last = (productsResult.length - 1) == index
-            console.log(product);
+            let last = (productsResult.length - 1) == index;
 
             const divProduct = document.createElement('div');
             divProduct.id = `product${index}`;
@@ -19,8 +19,8 @@ let currentTotalValue = 0;
 
             loadProductNameAndValue(product, index);
             loadProductDescription(product.description, index);
-            createPlusButton(index, product.value);
-            createMinusButton(index, product.value);
+            createPlusButton(index, product);
+            createMinusButton(index, product);
 
             if (!last) {
               divProducts.appendChild(document.createElement('hr'));
@@ -45,40 +45,67 @@ let currentTotalValue = 0;
         divProduct.appendChild(p);
       }
 
-      const createPlusButton = (index, value) => {
+      const createPlusButton = (index, product) => {
         let divProduct = document.getElementById(`product${index}`);
         const button = document.createElement('button1');
         button.id = `plus_button${index}`;
         button.className = "buy-button-circle";
         button.textContent = "+";
         divProduct.appendChild(button);
-        createPlusButtonListener(`plus_button${index}`, value);
+        createPlusButtonListener(index, product);
       }
 
-      const createMinusButton = (index, value) => {
+      const createMinusButton = (index, product) => {
         let divProduct = document.getElementById(`product${index}`);
         const button = document.createElement('button2');
         button.id = `minus_button${index}`
-        button.className = "buy-button-circle";
+        button.className = "buy-button-circle-disabled";
         button.textContent = "-";
         divProduct.appendChild(button);
-        createMinusButtonListener(`minus_button${index}`, value);
+        createMinusButtonListener(index, product);
       }
 
-      const createPlusButtonListener = (id, value) => {
-        document.getElementById(id).addEventListener("click", (buttonClicked) => {
+      const createPlusButtonListener = (index, product) => {
+        document.getElementById(`plus_button${index}`).addEventListener("click", () => {
           let totalValue = document.getElementById(`total_value`);
-          let total = currentTotalValue + value;
+          let total = currentTotalValue + product.value;
           currentTotalValue = total;
           totalValue.textContent = `Valor total: $${total.toFixed(2)}`;
+          appendProduct(product);
+          changeMinusButtonState(index, product);
         })
       }
 
-      const createMinusButtonListener = (id, value) => {
-        document.getElementById(id).addEventListener("click", (buttonClicked) => {
+      const createMinusButtonListener = (index, product) => {
+        document.getElementById(`minus_button${index}`).addEventListener("click", () => {
           let totalValue = document.getElementById(`total_value`);
-          let total = currentTotalValue - value;
+          let total = currentTotalValue - product.value;
           currentTotalValue = total;
           totalValue.textContent = `Valor total: $${total.toFixed(2)}`;
+          removeProduct(product);
+          changeMinusButtonState(index, product);
         })
+      }
+
+      const changeMinusButtonState = (index, product) => {
+        console.log(selectedProducts);
+        let button = document.getElementById(`minus_button${index}`);
+        if (selectedProducts.includes(product)) {
+          button.className = "buy-button-circle";
+        } else {
+          button.className = "buy-button-circle-disabled";
+        }
+      }
+
+      const appendProduct = (product) => {
+        selectedProducts.push(product);
+      }
+
+      const removeProduct = (product) => {
+        for (let index = 0; index < selectedProducts.length; index++) {
+          if (selectedProducts[index] == product) {
+            selectedProducts.splice(index, 1);
+            return;
+          }
+        }
       }
