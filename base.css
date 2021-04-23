@@ -1,0 +1,49 @@
+.w3-top, .w3-bottom {
+    position:fixed;
+    width:100%;
+    z-index:1
+}
+
+.w3-top{
+    top:0
+}
+
+.w3-bottom{
+    bottom:0
+}
+
+.buy-button-circle {
+    background-color: #f00;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    font-size: 25px;
+    margin-top: 5px;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
+
+  .finish-request-container {
+    background-color: #f00;
+    border: none;
+    color: #ffffff;
+    display: flex;
+    height: 100%;
+    margin-top: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 5px 0 5px 0;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .finish-request-content {
+    flex-basis: 50%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
