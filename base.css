@@ -1,15 +1,8 @@
-.w3-top, .w3-bottom {
-    position:fixed;
-    width:100%;
-    z-index:1
-}
-
-.w3-top{
-    top:0
-}
-
-.w3-bottom{
-    bottom:0
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("./images/burger_slide.png");
+  min-height: 75%;
 }
 
 .buy-button-circle {
@@ -67,8 +60,7 @@
   }
 
   .product-name {
-    font-size: 36px
-    ;
+    font-size: 36px;
   }
 
   .description {
@@ -77,4 +69,123 @@
 
   .total-value {
     font-size: 30px;
+  }
+
+  .top, .bottom{
+    position:fixed;
+    width:100%;
+    z-index:1
+  }
+
+  .top{
+    top:0
+  }
+
+  .bottom{
+    bottom:0
+  }
+
+  .simple-padding{
+    padding:8px 16px!important
+  }
+  
+  .large-padding {
+    padding:12px 24px!important
+  }
+
+  .color-back {
+    color:#fff!important;
+    background-color:#000!important
+  }
+
+  .color-white {
+    color:#000!important;
+    background-color:#fff!important
+  }
+
+  .block {
+    display:block;width:100%
+  }
+
+  .container-relative {
+    position:relative
+  }
+
+  .grayscale-min {
+    filter:grayscale(50%)
+  }
+
+  .bottom-left {
+    position:absolute;
+    left:0;
+    bottom:0
+  }
+
+  .aligin-center {
+    text-align:center!important
+  }
+
+  .display-none {
+    display:none!important
+  }
+
+  .display-middle {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    -ms-transform:translate(-50%,-50%)
+  }
+
+  .tag {
+    background-color:#000;
+    color:#fff;
+    display:inline-block;
+    padding-left:8px;
+    padding-right:8px;
+    text-align:center;
+  }
+
+  .tag-font {
+    font-size: 22px;
+  }
+
+  .text-white {
+    color:#fff!important
+  }
+
+  .div-pedido-container {
+    color:#000!important;
+    background-color:#fdf5e6!important;
+    filter:grayscale(75%);
+    font-size:18px!important
+  }
+
+  .padding-64{
+    padding-top:64px!important;
+    padding-bottom:64px!important
+  }
+
+  .font-wide{
+    letter-spacing:4px;
+    font-size: 32px;
+  }
+
+  .padding-32 {
+    padding-top:32px!important;
+    padding-bottom:32px!important
+  }
+
+  .padding-48 {
+    padding-top:32px!important;
+    padding-bottom:32px!important
+  }
+
+  .ligth-gray {
+    color:#000!important;
+    background-color:#f1f1f1!important
+  }
+
+  .font-footer {
+    font-size:28px!important
   }

@@ -20,53 +20,44 @@
     font-family: "Amatic SC", sans-serif;
   }
 
-  .bgimg {
-    background-position: center;
-    background-size: cover;
-    background-image: url("./images/burger_slide.png");
-    min-height: 75%;
-  }
-
   .menu {
     display: none;
   }
 </style>
 
 <body>
-  <div class="w3-top">
-    <div class="w3-row w3-padding w3-black">
+  <div class="top">
+    <div class="w3-row simple-padding color-back">
       <div class="w3-col s3">
-        <a href="#" class="w3-button w3-block w3-black">HOME</a>
+        <a href="#" class="w3-button block color-back">HOME</a>
       </div>
       <div class="w3-col s3">
-        <a href="#pedido" class="w3-button w3-block w3-black">PEDIDO</a>
+        <a href="#pedido" class="w3-button block color-back">PEDIDO</a>
       </div>
       <div class="w3-col s3">
-        <a href="#sobre-nos" class="w3-button w3-block w3-black">SOBRE NÓS</a>
+        <a href="#sobre-nos" class="w3-button block color-back">SOBRE NÓS</a>
       </div>
     </div>
   </div>
 
   <!-- Header with image -->
-  <header class="bgimg w3-display-container w3-grayscale-min" id="home">
-    <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
-      <span class="w3-tag">Aberto das 18h as 23:59h</span>
+  <header class="bgimg container-relative grayscale-min" id="home">
+    <div class="bottom-left aligin-center large-padding ">
+      <span class="tag tag-font">Aberto das 18h as 23:59h</span>
     </div>
-    <div class="w3-display-middle w3-center">
-      <span class="w3-text-white" style="font-size:90px">Hamburgueria<br>do Guto</span>
+    <div class="display-middle aligin-center">
+      <span class="text-white" style="font-size:90px">Hamburgueria<br>do Guto</span>
     </div>
   </header>
   
-  <div class="w3-sand w3-grayscale w3-large">
-
+  <div class="div-pedido-container">
     <!-- Pedido Container -->
     <div class="w3-container" id="pedido">
       <div class="w3-content">
-        <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">FAÇA SEU PEDIDO</span></h5>
-        <div id="pedido" class="w3-container w3-white w3-padding-32">
+        <h5 class="w3-center padding-64"><span class="tag font-wide">FAÇA SEU PEDIDO</span></h5>
+        <div id="pedido" class="w3-container color-white padding-32">
           <div id="products">
           </div>
-
           <a id="finish-button" href="">
             <div class="finish-request-container">
               <div class="finish-request-content">
@@ -82,7 +73,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+    <footer class="w3-center ligth-gray padding-48 font-footer">
       <p>Augusto Ferreira & Douglas de Carli</p>
     </footer>
 
