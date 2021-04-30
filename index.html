@@ -110,6 +110,12 @@
 <div class="confirmation-popup">
   <div class="confirmation-popup-content">
     Seu pedido foi confirmado!
+
+    <div class="popup-buttons">
+      <div class="close-confirmation-popup">
+        Voltar
+      </div>
+    </div>   
   </div>
 </div>
 
@@ -125,6 +131,10 @@
   document.querySelector(".finish-order-popup").addEventListener("click", function(){
     document.querySelector(".popup").style.display = "none";
     document.querySelector(".confirmation-popup").style.display = "flex";
+  })  
+
+  document.querySelector(".close-confirmation-popup").addEventListener("click", function(){
+    document.querySelector(".confirmation-popup").style.display = "none";
   })  
 </script>
 
