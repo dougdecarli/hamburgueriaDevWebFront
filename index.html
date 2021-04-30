@@ -67,13 +67,14 @@
           <div id="products">
           </div>
 
-          <a id="finish-button" href="">
+          <!-- <a id="finish-button" href=""> -->
+          <a id="finish-button">  
             <div class="finish-request-container">
               <div class="finish-request-content">
                 <p class="total-value" id="total_value">Valor total: R$0,00</p>
               </div>
               <div class="finish-request-content">
-                <p class="total-value">Finalizar pedido</p>
+                <p class="total-value" id="finish_order">Finalizar pedido</p>
               </div>
             </div>
           </a>
@@ -88,5 +89,38 @@
 
     <script src="index.js"></script>
 </body>
+
+<div class="popup">
+  <div class="popup-content">
+
+    <div class="popup-buttons">
+      <div class="close-popup">
+        Voltar
+      </div>
+    </div>
+
+    <div class="popup-buttons">
+      <div class="finish-order-popup" id="finish_order_popup">
+        Finalizar
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  document.getElementById("finish_order").addEventListener("click", function(){
+    document.querySelector(".popup").style.display = "flex";
+  })
+
+  document.querySelector(".close-popup").addEventListener("click", function(){
+    document.querySelector(".popup").style.display = "none";
+  })  
+
+  document.getElementById("finish_order_popup").addEventListener("click", function(){
+    document.querySelector(".popup").style.display = "none";
+    document.querySelector("confirmation_popup").style.display = "flex";
+  })  
+</script>
 
 </html>

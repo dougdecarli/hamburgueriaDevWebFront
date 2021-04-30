@@ -97,6 +97,17 @@
         }
       }
 
+      const createMinusButtonListener = (index, product) => {
+        document.getElementById(`minus_button${index}`).addEventListener("click", () => {
+          let totalValue = document.getElementById(`total_value`);
+          let total = currentTotalValue - product.value;
+          currentTotalValue = total;
+          totalValue.textContent = `Valor total: $${total.toFixed(2)}`;
+          removeProduct(product);
+          changeMinusButtonState(index, product);
+        })
+      }
+
       const appendProduct = (product) => {
         selectedProducts.push(product);
       }
